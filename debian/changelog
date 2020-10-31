@@ -1,0 +1,439 @@
+lxde-common (0.99.2-gtk3) unstable; urgency=medium
+
+  * Porting gtk3
+  
+ -- Ali Riza Keskin <parduscix@yandex.ru> 
+
+lxde-common (0.99.2-3) unstable; urgency=medium
+
+  * Adding lxsession-logout as recommended by lxde-common (LP: #1613397,
+    #1656470).
+  * Adding lxlock as recommended by lxde-common (Closes: #850330).
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Sat, 21 Jan 2017 01:09:24 +0200
+
+lxde-common (0.99.2-2) unstable; urgency=medium
+
+  * Fixing conffiles transition from lxde-common to openbox-lxde-session
+    (Closes: #845926).
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Sun, 27 Nov 2016 03:24:54 +0200
+
+lxde-common (0.99.2-1) unstable; urgency=medium
+
+  * Merging upstream version 0.99.2 (Closes: #836064, #844241).
+  * Bump Standards-Version to 3.9.8.
+  * Splitting out package openbox-lxde-session from lxde-common.
+  * Updating 01-default-config.patch and 02-desktop-background.patch.
+  * Removing 04-default-terminal.patch - not needed anymore.
+  * Using https for VCS fields in debian/control file.
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Tue, 22 Nov 2016 02:34:33 +0200
+
+lxde-common (0.99.1-1) unstable; urgency=medium
+
+  * Adding lxrandr and gnome-screenshot as recommended due to keybindings
+    in rc.xml.
+  * Merging upstream version 0.99.1 (Closes: #777637).
+  * Bump Standards-Version to 3.9.7.
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Sun, 21 Feb 2016 15:03:24 +0200
+
+lxde-common (0.99.0-2) unstable; urgency=low
+
+  * Handling obsolete lxpanel conffiles in maintscript (Closes: #768234).
+  * Changing Maintainer e-mail to Alioth based one.
+  * Adding openbox to dependencies since executables depend on it.
+  * Adding Provides: x-session-manager since it actually provides session
+    files.
+  * Updating the package description.
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Sun, 07 Jun 2015 21:32:28 +0300
+
+lxde-common (0.99.0-1) unstable; urgency=low
+
+  * Removing docbook-to-man from build dependencies, use man pages from tarball.
+  * Cleanup leftovers from lxsettings which was moved into lxsession.
+  * Bump Standards-Version to 3.9.6.
+  * Merging upstream version 0.99.0:
+    - Fixed lxpanel profile location (Closes: #760971).
+    - Added launching LXRandR when Fn+Screen (XF86Display key) is pressed
+      (Closes: #765620).
+    - Improved localization of included desktop entry files.
+  * Removing debian/desktop/lxde-screenlock.desktop, it is included by upstream.
+  * Removing 06-l10n-pt-br.patch, it is included by upstream.
+  * Removing override_dh_auto_configure target from debian/rules, it does
+    nothing if called the same dh_auto_configure.
+  * Adding keybinding XF86Display into README.Debian file.
+  * Adding intltool into build dependencies, it is required now.
+  * Adding lintian-overrides file for debian-watch-may-check-gpg-signature.
+  * Adding lintian override for desktop-entry-lacks-keywords-entry,
+    usr/share/xsessions/LXDE.desktop is never used in menus.
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Thu, 23 Oct 2014 18:23:37 +0300
+
+lxde-common (0.5.6-1) unstable; urgency=low
+
+  * Removing Daniel Baumann from uploaders by his request (Closes: #704337).
+  * Adding myself to Uploaders.
+  * Fixing typos in the package description (Closes: #745316).
+  * Adding pcmanfm, lxpanel, lxtask to Recommends (Closes: #677131).
+  * Merging upstream version 0.5.6 (Closes: #754560, #754558).
+  * Removing patches 05-openbox-fullscreen.patch, 07-xdg-pcmanfm.patch,
+    08-xdg-openbox.patch, 09-xdg-lxpanel.patch included into upstream.
+  * Updating Standards-Version (now is 3.9.5).
+  * Removing deprecated override_dh_builddeb target from debian/rules.
+  * Removing override_dh_auto_test from debian/rules: it's not required
+    anymore.
+  * Removing debian/lxde-common.NEWS file - it duplicates changelog.
+  * Updating watch file to support XZ tarball format and non-numeric versions.
+  * Updating keybindings in the README.Debian file.
+
+ -- Andriy Grytsenko <andrej@rep.kiev.ua>  Mon, 01 Sep 2014 18:54:12 +0300
+
+lxde-common (0.5.5-6) unstable; urgency=low
+
+  * Avoid removing x-session-manager alternative on package upgrades
+    (Closes: #587163).
+  * Changing fullscreen keyboard shortcut in openbox default
+    configuration from F11 to Alt-F11 to avoid interferences with other
+    programs that use F11 for fullscreen, such as iceweasel or gnome-
+    terminal (Closes: #591350).
+  * Adding patch with Brazilian Portuguese translation for lxde-
+    loguout.desktop (Closes: #607078).
+  * Adding patch to correct location of XDG global configuration file
+    for pcmanfm in startlxde (Closes: #650427).
+  * Moving location for openbox configuration files from
+    /usr/share/lxde/openbox to XDG global configuration directory in
+    /etc/xdg/openbox/LXDE (Closes: #649425).
+  * Adding patch to move location for lxpanel configuration files from
+    /usr/share/lxde/lxpanel to XDG global configuration directory in
+    /etc/xdg/lxpanel/LXDE.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 18 May 2012 16:24:46 +0200
+
+lxde-common (0.5.5-5) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Updating Andrews name and email in default-config.patch.
+
+  [ Sergey Slipchenko ]
+  * Fixing spelling typo in debian/lxde-common.lintian-overrides.
+
+  [ Andrew Lee (李健秋) ]
+  * Dropping build-depends on libgtk2.0-dev.
+
+  [ Daniel Baumann ]
+  * Dropping further unecessary build-depends.
+
+  [ Sergey Slipchenko ]
+  * Dropping gnome-polkit.patch.
+  * Using lxlock instead of xscreensaver-command -lock to lock screen.
+  * Dropping to use encoding field in lxde-screenlock desktop file.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 18 May 2012 10:06:49 +0200
+
+lxde-common (0.5.5-4) unstable; urgency=low
+
+  * Spitting out lxde and lxde-core metapackages to dedicated
+    lxde-metapackages source package.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 20 Apr 2012 10:32:58 +0200
+
+lxde-common (0.5.5-3) unstable; urgency=low
+
+  * Updating maintainer field.
+  * Adding myself to uploaders.
+  * Updating vcs fields.
+  * Removing whitespaces at EOL and EOF.
+  * Updating package to debhelper version 9.
+  * Updating package to standards version 3.9.3.
+  * Making build-depends unversioned where already fulfiled as of
+    squeeze.
+  * Making depends unversioned where already fulfiled as of squeeze.
+  * Updating homepage field.
+  * Rewriting copyright file machine-readable format version 1.0.
+  * Prefixing debhelper files with package name.
+  * Moving desktop file to subdirectory desktop within the packaging
+    files.
+  * Rediffing default-config.patch with common diff options.
+  * Rediffing desktop-background.patch with common diff options.
+  * Rediffing menu-xdg.patch with common diff options.
+  * Rediffing default-terminal.patch with common diff options.
+  * Rediffing gnome-polkit.patch with common diff options.
+  * Decrufting rules file.
+  * Switching to xz compression for both the source and the binary
+    packages.
+  * Reworking package descriptions a bit.
+  * Removing superflous alternative browser in recommends.
+  * Tightening lintian overrides.
+  * Reformating readme debian.
+  * Using prerm boilerplate.
+  * Using postinst boilerplate.
+  * Reordering debhelper install file.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 19 Apr 2012 22:22:30 +0200
+
+lxde-common (0.5.5-2) unstable; urgency=low
+
+  [ Sergey Slipchenko ]
+  * Drop few patches included in upstream (Closes: #648899)
+  * Drop debian/lxde-logout.desktop (Closes: #592686)
+  * Drop debian/source/options
+  * Delete unneeded ${shlibs:Depends}
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Tue, 14 Feb 2012 16:39:04 +0800
+
+lxde-common (0.5.5-1) unstable; urgency=low
+
+  * Merging upstream version 0.5.5:
+    (Closes: #510396, #635236, #614063, #610190, #588092, #585924, #573388)
+    - Fix install location of pcmanfm.conf file
+    - Add missing openbox-lxde manpage
+    - fixed pcmanfm config file path after 0.9.8 release
+    - Minor adjust for PCManfm 0.9 LXDE profile name in LXDE session.
+    - pcmanfm2 has been finally re-named as pcmanfm
+    - fixed pcmanfm command to call the proper config table on pcmanfm2
+    - Set terminal=lxterminal to make it consistent with the terminal
+      setting in lxpanel.
+    - Bump version of lxde-common to 0.5.5.
+    - Fix config file of pcmanfm2.
+    - Fix autostart for pcmanfm2.
+    - Properly set XDG_MENU_PREFIX.
+    - remove old config file
+    - swtich from pcmanfm to pcmanfm2
+    - Sync lxde-common/debian from debian.
+    - Ensure the existance of the ‘Desktop’ folder
+    - start xscreensaver after lxpanel and pcmanfm
+    - Launch dbus in startlxde when needed.
+  * Removing useless whitespaces at EOL and EOF.
+  * Useing debhelper 8.
+  * Sorting build-depends.
+  * Warpping build-depends.
+  * Sorting and warpping depends on lxde-common.
+  * Sorting and warpping depends on lxde-core.
+  * Sorting and warpping recommends on lxde-core.
+  * Sorting and warpping suggests on lxde-core.
+  * Sorting and warpping depends on lxde binary package.
+  * Sorting and warpping recommends on lxde binary package.
+  * Sorting and warpping suggests on lxde binary package.
+  * Completing and rewriting copyright file in machine interpretable format.
+  * Remove debian/dirs: let upstream make does the job.
+  * Remove debian/docs: empty NEWS and useless README.
+  * Convert to debian source format 3.0 (quilt).
+  * Removing quilt in build-depends: we are now using source format 3.0 (quilt).
+  * Removing debian/README.source: we are now using source format 3.0 (quilt).
+  * Compacting watch file.
+  * Compacting rules file.
+  * Added debian/lxde-common.install for dh_auto_install.
+  * Drop 02_lxsession_0.4.1.patch: included in upstream.
+  * Refresh 03_menu-xdg.patch.
+  * Drop 04_pcmanfm0.9.patch: included in upstream.
+  * Refreshed 05_default_terminal.patch.
+  * Refreshed 10_ensure-dbus-launch.patch.
+  * Refreshed 11_ensure-desktop-folder.patch.
+  * Refreshed 12_autostart-gnome-polkit.patch.
+  * Refreshed 13_ensure-menu-prefix.patch.
+  * Added [pt_BR] keys to lxde-logout.desktop and
+    lxde-screenlock.desktop. (#607078)
+  * Recommends desktop-file-utils in lxde-core binary
+    package. (Closes: #610070)
+  * Bumped version on pcmanfm to (>=0.9.8).
+  * Drop hal from recommends. (Closes: #615236, #589234)
+  * Apply 02_alternative_desktop-background.patch from
+    Richard Nelson <unixabg@gmail.com>. (Closes: #634004)
+  * Added misc depends in lxde and lxde-core to make lintien happy.
+  * Fix description synopsis starts with article.
+  * Bump Standard-Version to 3.9.2.
+  * Correct lxde-common.lintian-overrides.
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 31 Jul 2011 04:36:12 +0800
+
+lxde-common (0.5.0-4) unstable; urgency=low
+
+  [ Andrew Lee (李健秋) ]
+  * debian/README.Debian:
+    - Update README.Debian for 'startx' users. (Closes:#570083)
+    - Document default hotkeys for default openbox-lxde WM
+  * Added freedesktop.org's specification required type keys to
+    lxde-logout.desktop and lxde-screenlock.desktop (Closes:#570135)
+  * Convert dpatch to quilt
+  * Update autostart file to support pcmanfm 0.9 series. (Closes:#583146)
+  * Set default terminal to x-terminal-emulator. (Closes:#563221)
+  * debian/control:
+    - Use LXDE Packaging Team address
+    - Bumped Standard-version to 3.8.4
+    - Updated Homepage url
+    - Added Vcs-Git and Vcs-Browser tags
+    - Update lxde-common depends on lxsession (>= 0.4.4)
+    - Update lxde-core depends on pcmanfm (>=0.9.5), lxpanel (>= 0.5.5)
+    - Drop recommends on hal
+    - Recommends on chromium-browser | iceweasel | www-browser (Closes:#570176)
+  * Correct watch file. (Closes:#582670)
+  * debian/patches:
+    - 04_pcmanfm0.9.patch: install default config file for pcmanfm 0.9 series
+  * Switch to DH7
+  * Switch to dpkg-source 3.0 (quilt) format
+
+  [ Julien Lavergne ]
+  * debian/patches:
+   - 10_ensure-dbus-launch.patch: From upstream, launch dbus when it's needed.
+   - 11_ensure-desktop-folder.patch: From upstream, create the desktop folder
+     if it doesn't exist.
+   - 12_autostart-gnome-polkit.patch:
+     Autostart polkit-gnome-authentication-agent-1 to make polkit working on
+     LXDE session.
+   - 13_ensure-menu-prefix.patch: From upstream, ensure that the menu prefix is
+     properly set.
+  * debian/control:
+   - Recommends xserver-xorg for lxde, to install by default a xserver.
+   - Recommends policykit-1-gnome for polkit support.
+   - Recommends gksu for support in pcmanfm.
+   - Wrap depends and build-depends.
+   - Build-depends on debhelper (>= 7.0.50) for overrides support.
+   - Add ${misc:Depends} to lxde-core and lxde.
+  * debian/rules:
+   - Add --fail-missing to dh_install.
+  * debian/lxde-common.install:
+   - Install etc/ and usr/
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 02 Jun 2010 00:24:55 +0800
+
+lxde-common (0.5.0-3) unstable; urgency=low
+
+  * debian/control:
+    - fallback-depend on pcmanfm-nohal for lxde-core. (Closes:#568117)
+    - Added menu-xdg as Recommends for lxde.
+  * Added upstream wiki url into README.Debian. (Closes:#565959)
+  * Apply 03_menu-xdg.dpatch to support Debian Menu. (Closes:#517190)
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Mon, 08 Feb 2010 15:05:04 +0800
+
+lxde-common (0.5.0-2) unstable; urgency=low
+
+  * Added 02_lxsession_0.4.1.dpatch to support new command line argument in
+    lxsession 0.4.1
+  * debian/control: depends on lxsession (>=0.4.1)
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Fri, 18 Dec 2009 22:53:55 +0800
+
+lxde-common (0.5.0-1) unstable; urgency=low
+
+  * New upstream release
+    - New config files to support new changes in lxsession
+    - Added some translation to lxde-logout
+    - Remove icon theme from it (Closes: #545248)
+  * debian/control:
+    - lxde-common: remove depends on lxde-setting-daemon
+    - lxde-core: remove depends on lxsessions
+    - lxde: move lxmusic from depends to recommends
+    - lxde: added depends on lxde-icon-theme
+  * Updated debian/watch
+  * debian/rules:
+    - drop desktop.conf(included in upstream)
+  * Added README.source
+  * Updated README.Debian and NEWS.Debian
+  * Bumped Standard-version to 3.8.3
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Fri, 18 Dec 2009 15:48:43 +0800
+
+lxde-common (0.4.2-3) unstable; urgency=low
+
+  * Added desktop.conf for the built-in settings daemon in lxsession (>=0.4)
+  * See x-terminal-emulator as default terminal for pcmanfm
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Mon, 16 Nov 2009 13:40:44 +0800
+
+lxde-common (0.4.2-2) unstable; urgency=low
+
+  * debian/control:
+    - Update lxde-common depends on lxde-settings-daemon | lxsession (>= 0.4.0)
+  * Bump Standard-version to 3.8.3
+  * Minor update in README.Debian
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 15 Nov 2009 23:48:37 +0800
+
+lxde-common (0.4.2-1) unstable; urgency=low
+
+  * New upstream release
+    - Remove spurious reference to file "default"
+    - Use ln -s -f so reinstalling works
+    - Use Docbook-XML instead of SGML for manpages
+    - Translation update
+  * Correct debian/watch
+  * debian/control:
+    - Update package descriptions
+    - Recommends on gdm | x-display-manager
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 26 Jul 2009 20:08:50 +0200
+
+lxde-common (0.4.1-2) unstable; urgency=low
+
+  * debian/control:
+    - Update depends/recommends/suggests by advices from Jonas Smedegaard
+    - Bumped Standard-version to 3.8.2
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sun, 19 Jul 2009 13:24:07 +0200
+
+lxde-common (0.4.1-1) unstable; urgency=low
+
+  * New upstream release (Closes:#517727, #517499, #527079)
+    - Split lxde-settings-daemon to separate package.
+  * debian/control:
+    - Added lxde-core depends on lxsession (>= 0.3.7)
+    - Added lxde depends on lxinput (>=0.1), lxsession-edit, lxshortcut
+      and lxmusic
+    - Suggests on s/x-www-browser/www-browser/
+  * Conffiles are now standard at /etc/xdg location (Closes: #517740)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Fri, 29 May 2009 20:17:55 +0800
+
+lxde-common (0.3.2.1+svn20080509-6) unstable; urgency=low
+
+  * Set x-session-manager with priority 50 (same as xfce4)
+    (Closes:#511577)
+  * lxde-core:
+    - Suggests lxterminal, x-www-browser. (Closes:#524177)
+    - Recommends xscreensaver. (Closes:#524391)
+  * Minor description fix. (Closes:#502385)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Thu, 23 Apr 2009 14:23:15 +0800
+
+lxde-common (0.3.2.1+svn20080509-5) unstable; urgency=low
+
+  * Added 'lock screen' and 'Logout' buttons into default panel settings.
+    (Closes: #493774)
+  * debian/control:
+    - lxde metapackage depends on lxterminal, lxrandr, obconf
+    - lxde metapackage suggests on lxtask
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sat, 27 Sep 2008 16:36:01 +0800
+
+lxde-common (0.3.2.1+svn20080509-4) unstable; urgency=high
+
+  * Remove parallel builds support in debian/rules. (Closes: #490328)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sat, 12 Jul 2008 11:44:09 +0800
+
+lxde-common (0.3.2.1+svn20080509-3) unstable; urgency=low
+
+  * lxde-settings-daemon recommends lxde-common (Closes: #485642)
+  * new metapackae lxde-core
+  * Corrected dh_movefiles in debian/rules (Closes: #487854)
+  * Bumped Standards-Version to 3.8.0.0
+    - Supporting the standardized environment variable `DEB_BUILD_OPTIONS'
+
+ -- Andrew Lee <andrew@linux.org.tw>  Sat, 28 Jun 2008 22:13:52 +0800
+
+lxde-common (0.3.2.1+svn20080509-2) unstable; urgency=low
+
+  * debian/copyright:
+    Point full text of LGPL on the system
+
+ -- Andrew Lee <andrew@linux.org.tw>  Thu, 29 May 2008 17:24:41 +0800
+
+lxde-common (0.3.2.1+svn20080509-1) unstable; urgency=low
+
+  * Initial release (Closes: #471954)
+
+ -- Andrew Lee <andrew@linux.org.tw>  Thu, 29 May 2008 00:17:30 +0800

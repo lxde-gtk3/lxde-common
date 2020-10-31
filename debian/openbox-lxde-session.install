@@ -1,0 +1,6 @@
+etc/xdg/lxsession/LXDE/
+etc/xdg/openbox/LXDE/
+usr/bin/
+usr/share/applications/
+usr/share/man/
+usr/share/xsessions/

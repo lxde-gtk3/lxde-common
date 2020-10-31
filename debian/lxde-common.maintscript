@@ -1,0 +1,6 @@
+mv_conffile /etc/xdg/lxpanel/profile/LXDE/panels/panel /etc/xdg/lxpanel/LXDE/panels/panel 0.5.6-1 lxde-common
+mv_conffile /etc/xdg/lxpanel/profile/LXDE/config /etc/xdg/lxpanel/LXDE/config 0.5.6-1 lxde-common
+rm_conffile /etc/xdg/lxsession/LXDE/autostart
+rm_conffile /etc/xdg/lxsession/LXDE/desktop.conf
+rm_conffile /etc/xdg/openbox/LXDE/menu.xml
+rm_conffile /etc/xdg/openbox/LXDE/rc.xml
